@@ -1,0 +1,6 @@
+$heroku login
+$heroku container:login
+$heroku create
+$heroku container:push web --app <app-name>
+$heroku container:release web --app <app-name>
+$heroku open --app <app-name>
