@@ -24,13 +24,15 @@ namespace FoodGenerateAPI.Behaviors
         {
             _stopWatch.Start();
 
-            var response = await next();
-
-            _stopWatch.Stop();
-
             var elapsedMilliseconds = _stopWatch.ElapsedMilliseconds;
 
+            var response = await next();
+
             _logger.LogInformation($"Running Request: {typeof(TRequest).Name} elapsedMilliseconds:{ elapsedMilliseconds}");
+
+            _stopWatch.Stop();
+            
+            _logger.LogInformation($"Running Request: {typeof(TResponse).Name} elapsedMilliseconds:{ elapsedMilliseconds}");
 
             return response;
         }

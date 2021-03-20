@@ -25,5 +25,11 @@ namespace FoodGenerateAPI.Controllers
         {
             return await _mediator.Send(new Queries.GetFoodQuery.Query());
         }
+
+        [HttpGet("random")]
+        public async Task<IEnumerable<Food>> GetRandomFood()
+        {
+            return await _mediator.Send(new Queries.GetRandomFoodQuery.Query());
+        }
     }
 }
