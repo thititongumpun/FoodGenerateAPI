@@ -23,7 +23,7 @@ namespace FoodGenerateAPI.Queries
 
             public async Task<IEnumerable<Food>> Handle(Query request, CancellationToken cancellationToken)
             {
-                return await _context.Foods.OrderByDescending(f => f.Review).ToListAsync();
+                return await _context.Foods.ToListAsync();
             }
         }
     }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FoodGenerateAPI.Commands.Create;
 using FoodGenerateAPI.Db;
 using FoodGenerateAPI.Models;
 using MediatR;
@@ -30,6 +31,12 @@ namespace FoodGenerateAPI.Controllers
         public async Task<IEnumerable<Food>> GetRandomFood()
         {
             return await _mediator.Send(new Queries.GetRandomFoodQuery.Query());
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateFood(CreateFoodCommand command)
+        {
+            return Ok(await _mediator.Send(command));
         }
     }
 }

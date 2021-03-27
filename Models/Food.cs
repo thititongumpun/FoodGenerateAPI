@@ -7,7 +7,7 @@ namespace FoodGenerateAPI.Models
         [Key]
         public int Id { get; set; }
         public string FoodName { get; set; }
-        public double Review {get;set;}
+        public int Liked { get; set; } = 0;
         public string ImageData {get;set;}
     }
 }
