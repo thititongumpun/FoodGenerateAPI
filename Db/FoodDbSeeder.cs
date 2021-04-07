@@ -67,7 +67,7 @@ namespace FoodGenerateAPI.Db
                     new Food
                     {
                         FoodName = "Larb",
-                        ImageData = GetImage("larb.jpg", "image/jpg")
+                        ImageData = GetImage("larbZab.jpg", "image/jpg")
                     },
                     new Food
                     {
